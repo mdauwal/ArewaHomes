@@ -1,0 +1,157 @@
+/* Main container */
+.terms-container {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 20px;
+  width: 100%;
+  background: #ffffff;
+  height: 100vh;
+  box-sizing: border-box;
+  margin: 2.5rem;
+}
+
+/* Content section */
+.terms-content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  overflow: hidden;
+  font-family: Inter;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+}
+
+/* Dashed border with draggable dot */
+.draggable-border {
+  position: relative;
+  width: 10px;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 8px,
+    #000 8px,
+    #000 10px
+  );
+  cursor: row-resize;
+}
+
+.draggable-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  background-color: #000;
+  border-radius: 50%;
+  cursor: row-resize;
+  transform: translate(-50%, -50%);
+}
+.terms-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  padding: 10px;
+}
+.back-button {
+  background: none;
+  border: none;
+  font-size: 0.875rem;
+  color: #000000;
+  cursor: pointer;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  width: 50px;
+  display: flex;
+}
+.term-mainheader {
+  font-family: Unna;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: left;
+}
+
+/* Content inside the terms section */
+.content-section {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Footer section with checkbox */
+.terms-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+}
+
+/* Checkbox and label */
+.checkbox-section {
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+.i-agree{
+font-family: Inter;
+font-size: 14px;
+font-weight: 400;
+text-align: center;
+}
+.term-condition{
+font-family: Inter;
+font-size: 14px;
+font-weight: 400;
+text-align: center;
+text-decoration: underline;
+}
+
+.checkbox-section input {
+  width: 16px;
+  height: 16px;
+}
+
+/* Continue button */
+.continue-button {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #000000;
+  width: 100%;
+}
+
+.continue-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .terms-content {
+    grid-template-columns: 1fr;
+  }
+
+  .draggable-border {
+    display: none;
+  }
+  .terms-header {
+    flex-direction: column;
+  }
+
+  .terms-footer {
+    padding: 10px;
+  }
+
+  .continue-button {
+    width: 100%;
+  }
+}

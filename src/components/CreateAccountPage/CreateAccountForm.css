@@ -1,0 +1,177 @@
+
+.create-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+  }
+  .btn-close {
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    float: right;
+    gap: 5px;
+  }
+  .icon-close{
+    font-size: 30px;
+  }
+  .text-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+  }
+  
+  .account-header{
+    font-size: 20px;
+    font-weight: 400;
+    text-align: start;
+  }
+  
+  .log-header {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .log-header p{
+      font-size: 12px;
+  }
+
+  .log-header a {
+    color: #000;
+    font-size: small;
+    text-decoration: underline 2px solid;
+    font-weight: bold;
+  }
+
+  /* Social account buttons */
+  .social-account{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+  }
+  
+  .facebook-btn,
+  .google-btn {
+    width: 48%;
+    padding: 12px;
+    border: none;
+    color: white;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 30px;
+    white-space: nowrap;
+  }
+  
+  .facebk-btn {
+    background-color: hsl(218, 77%, 26%);
+  }
+  
+  .google-Btn {
+    background-color: #db4437;
+  }
+  
+  hr{
+    border: 1px solid hsl(0, 3%, 94%);
+    margin-bottom: 30px;
+  }
+
+    /* Form styling */
+    .account-form {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .account-form label {
+        font-size: 10px;
+        margin-bottom: 5px;
+        text-align: start;
+        font-weight: bold;
+      }
+      
+      .account-form input {
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+      }
+        /* Login button */
+  .Btn-login{
+    padding: 12px;
+    background-color: #000;
+    color: white;
+    border: none;
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .check-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-top: 10px;
+    font-size: 10px;
+  }
+  
+  /* Media Queries for responsiveness */
+  
+  /* For screens 600px and below (small devices like mobile phones) */
+  @media (max-width: 600px) {
+    .create-container {
+        max-width: 100%;
+        padding: 0 auto;
+        margin: auto;
+    }
+  
+    .account-header h3, .log-header p, .login-btn {
+        font-size: 14px;
+    }
+  
+    .facebook-btn, .google-btn {
+        width: 100%;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+  
+    .social-account {
+        flex-direction: column;
+    }
+  
+    .btn-close {
+        right: 15px;
+    }
+  } 
+  
+  /* For screens between 601px and 768px (tablets) */
+  @media (min-width:320px) and (max-width: 768px) {
+    .login-container {
+        max-width: 90%;
+        padding: 0 auto;
+        margin: 0 auto;
+    }
+  
+    .account-header h3{
+        font-size: 15px;
+    }
+  
+    .social-account button {
+        font-size: 13px;
+    }
+  }
+
+  /* For screens wider than 1200px (large desktops) */
+  @media (min-width: 1200px) {
+    .login-container {
+        max-width: 600px;
+    }
+  }

@@ -1,0 +1,105 @@
+
+.container-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content-box {
+  background-color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+.icon-upload p {
+    display: flex;
+    margin: auto;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 400px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: 400px;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 12px;
+  color: #000;
+  margin-bottom: 30px;
+}
+
+.update-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 13px;
+  background-color: black;
+  color: white;
+  border: none;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.update-button:hover {
+  background-color: #333;
+}
+
+.explore-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: transparent;
+  border: 1px solid black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.explore-button:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+  .content-box {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .update-button,
+  .explore-button {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .update-button,
+  .explore-button {
+    padding: 10px;
+    font-size: 0.8rem;
+  }
+}

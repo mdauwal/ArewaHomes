@@ -1,0 +1,103 @@
+.image-grid-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid rgb(46, 46, 46);
+  border-top: 1px solid rgb(224, 224, 224);
+ 
+}
+.contOne{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-bottom:none ;
+}
+.h21 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.upload-section {
+  margin-bottom: 20px;
+}
+
+.image-grid {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.upload-section{
+  width: 100%;
+  padding: 25px;
+  background-color: rgb(241, 241, 241);
+  color: rgb(78, 77, 77);
+  border: 1px dashed black;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  justify-items: center;
+  justify-content: center;
+}
+.image-item {
+  position: relative;
+}
+.contOne{
+  display:flex;
+  justify-content: space-between;
+  font-weight:bold ;
+
+}
+.image-item img {
+  width: 100%;
+  height: auto;
+}
+.mytext{
+  text-align: left;
+  margin-bottom: 20px;
+}
+.backg{
+  text-align: right;
+}
+.delete-btn {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 9px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0px 2px;
+  border: 1px solid black;
+}
+
+.delete-btn:hover {
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+}
+
+/* .save-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+} */
+
+.save-btn:hover {
+  background-color: #444;
+}

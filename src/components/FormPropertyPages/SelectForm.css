@@ -1,0 +1,238 @@
+/* General form container */
+.property-form-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Header section */
+.header-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  /* color: #007bff; */
+  cursor: pointer;
+}
+
+.header-text h2 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.borderline {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.para {
+  text-align: start;
+  font-size: 12px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+.formselect {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formselect label {
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.multi-select-container {
+  width: 100%;
+}
+
+.multi-select-container label {
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Button styling */
+.continue-btn {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.continue-btn:hover {
+  background-color: #444;
+}
+
+/* React-Select Styling */
+.select-items,
+.amenities-select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.amenities-select .css-1dimb5e-placeholder,
+.select-items .css-1dimb5e-placeholder {
+  text-align: start;
+  color: #999;
+  padding-left: 10px;
+}
+
+.amenities-select .css-1okebmr-indicatorSeparator,
+.select-items .css-1okebmr-indicatorSeparator {
+  display: none;
+}
+
+.amenities-select .css-1wy0on6,
+.select-items .css-1wy0on6 {
+  padding: 0;
+}
+
+.amenities-select .css-1g6gooi {
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+
+.css-1hwfws3 {
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.css-1rhbuit {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Style for the selected options' "x" button */
+.amenities-select .css-xb97g8 {
+  color: #ff0000;
+}
+
+/* Media Queries */
+
+/* Extra small devices (phones, 320px and up) */
+@media (max-width: 480px) {
+  .property-form-container {
+    padding: 10px;
+  }
+
+  .header-text h2 {
+    font-size: 12px;
+  }
+
+  .back-btn {
+    font-size: 10px;
+  }
+
+  .formselect label,
+  .multi-select-container label {
+    font-size: 8px;
+  }
+
+  .continue-btn {
+    font-size: 10px;
+    padding: 8px;
+  }
+}
+
+/* Small devices (phones, 480px and up) */
+@media (max-width: 678px) {
+  .property-form-container {
+    padding: 15px;
+    margin: 30px;
+    width: 80%;
+  }
+
+  .header-text h2 {
+    font-size: 13px;
+  }
+
+  .back-btn {
+    font-size: 11px;
+  }
+
+  .formselect label,
+  .multi-select-container label {
+    font-size: 9px;
+  }
+
+  .continue-btn {
+    font-size: 11px;
+    padding: 9px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .property-form-container {
+    padding: 20px;
+    max-width: 300px;
+    margin: 30px;
+  }
+
+  .header-text h2 {
+    font-size: 14px;
+  }
+
+  .back-btn {
+    font-size: 12px;
+  }
+
+  .formselect label,
+  .multi-select-container label {
+    font-size: 10px;
+  }
+
+  .continue-btn {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+/* Large devices (desktops, 1024px and up) */
+@media (min-width: 1025px) {
+  .property-form-container {
+    max-width: 800px;
+    padding: 25px;
+  }
+
+  .header-text h2 {
+    font-size: 16px;
+  }
+
+  .back-btn {
+    font-size: 14px;
+  }
+
+  .formselect label,
+  .multi-select-container label {
+    font-size: 11px;
+  }
+
+  .continue-btn {
+    font-size: 14px;
+    padding: 12px;
+  }
+}

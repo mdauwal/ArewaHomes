@@ -1,0 +1,143 @@
+/* General modal styling */
+.modal-contain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 400px;
+  max-width: 100%;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  font-size: 1.25rem;
+  margin: 0;
+  font-family: Unna;
+  font-size: 17px;
+  font-weight: 400;
+  text-align: left;
+  color: #000000;
+}
+
+.modal-close-button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: black;
+}
+.can-button {
+  margin-left: 0.375rem;
+}
+.back-button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: blue;
+  cursor: pointer;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  width: 50px;
+  display: flex;
+}
+.back-btn {
+  margin-right: 0.3125rem;
+  margin-top: 6.5px;
+}
+.modal-body {
+  padding: 1.25rem;
+  margin-bottom: 0rem;
+}
+.back {
+  text-align: left;
+}
+.back button {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  color: #000000;
+}
+.pick {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  margin-top: -1.25rem;
+}
+.bold {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  color: #000000;
+}
+
+.modal-body h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.modal-body p {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+/* Radio button styles */
+.radio-button {
+  display: flex;
+  flex-direction: column;
+}
+
+.labelsss {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.labelsss input[type="radio"] {
+  margin-right: 10px;
+}
+
+.labelsss:hover {
+  background-color: #f9f9f9;
+}
+
+.labelsss input[type="radio"]:checked + span {
+  font-weight: bold;
+}
+
+/* Proceed button styles */
+.proceed-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 1.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.proceed-button:hover {
+  background-color: #333;
+}

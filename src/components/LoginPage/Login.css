@@ -1,0 +1,225 @@
+
+/* Base styles for all devices */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+  }
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    float: right;
+    gap: 5px;
+  }
+  .close-icon{
+    font-size: 30px;
+  }
+
+  .text_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .login-header {
+    margin-bottom: 10px;
+  }
+  
+  .login-header h3 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: start;
+  }
+  
+  .login-header p {
+    font-size: 16px;
+    text-align: start;
+  }
+  
+  .account-info {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .account-info p {
+    font-size: 14px;
+  }
+  
+  .account-info a {
+    color: #000;
+    font-size: small;
+    text-decoration: underline 2px solid;
+  }
+  
+  /* Social login buttons */
+  .social-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .facebook-btn,
+  .google-btn {
+    width: 48%;
+    padding: 14px;
+    border: none;
+    color: white;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 40px;
+  }
+  
+  .facebook-btn {
+    background-color: hsl(218, 77%, 26%);
+  }
+  
+  .google-btn {
+    background-color: #db4437;
+  }
+  
+  hr{
+    border: 1px solid hsl(0, 3%, 94%);
+    margin-bottom: 30px;
+  }
+  
+  /* Form styling */
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-form label {
+    font-size: 10px;
+    margin-bottom: 5px;
+    text-align: start;
+    font-weight: bold;
+  }
+  
+  .login-form input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .password-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .forgot-password {
+    font-size: 10px;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .show-password {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .show-password input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 60px;
+    border: 1px solid #ccc;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 30%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 14px;
+    color: #000;
+  }
+  
+  /* Login button */
+  .login-btn {
+    padding: 12px;
+    background-color: #000;
+    color: white;
+    border: none;
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .login-btn:hover {
+    background-color: #333;
+  }
+  
+  /* Media Queries for responsiveness */
+  
+  /* For screens 600px and below (small devices like mobile phones) */
+   @media (max-width: 600px) {
+    .login-container {
+        max-width: 90%;
+        padding: 15px;
+    }
+  
+    .login-header h3 {
+        font-size: 20px;
+    }
+  
+    .login-header p, .account-info p, .forgot-password, .login-btn {
+        font-size: 14px;
+    }
+  
+    .facebook-btn, .google-btn {
+        width: 100%;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+  
+    .social-login {
+        flex-direction: column;
+    }
+  
+    .close-btn {
+        right: 15px;
+    }
+  } 
+  
+  /* For screens between 601px and 768px (tablets) */
+  @media (min-width:320px) and (max-width: 768px) {
+    .login-container {
+        max-width: 90%;
+        padding: 20px;
+    }
+  
+    .login-header h3 {
+        font-size: 22px;
+    }
+    .account-info{
+      display: flex;
+    }
+    .login-header p, .account-info p {
+        font-size: 15px;
+    }
+  
+    .social-login button {
+        font-size: 13px;
+    }
+  }
+  
+  /* For screens wider than 1200px (large desktops) */
+  @media (min-width: 1200px) {
+    .login-container {
+        max-width: 600px;
+    }
+  }
+
+  

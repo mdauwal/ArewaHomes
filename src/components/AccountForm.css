@@ -1,0 +1,248 @@
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.content {
+  margin: 0 auto;
+  border-bottom: 1px solid rgb(228, 227, 227);
+  padding: 10px 30px 0px 30px;
+}
+.form-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  height: 100vh;
+}
+.formt {
+  padding: 20px 30px 30px 30px;
+  width: 100%;
+  max-width: 800px;
+  background-color: white;
+  /* padding: 20px; */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.headert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.h2t {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.close-btn {
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.close-bt {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+
+  right: 10px;
+}
+.agree {
+  margin: 10px;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+.labelt {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  padding-top: 12px;
+  text-align: left;
+}
+
+.inputt[type="date"],
+.inputt[type="password"],
+.inputt[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.password-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.back {
+  padding-bottom: 30px;
+}
+.password-toggle-btn {
+  background: none;
+  border: none;
+  color: #080808;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.password-toggle-btn:hover {
+  text-decoration: underline;
+}
+
+.password-hint {
+  font-size: 0.7rem;
+  color: #666;
+  text-align: center;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+p.flex.justfy-start {
+  font-size: 12px;
+}
+.mainTwo {
+  font-size: 0.8rem;
+  color: #131313;
+  text-align: center;
+  font-weight: 600;
+}
+.error-text {
+  color: red;
+  font-size: 0.8rem;
+}
+.policy {
+  font-size: 0.89rem;
+}
+.policy a {
+  text-decoration: underline;
+}
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.mainFlex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit-btn:hover {
+  background-color: #333;
+}
+/* Default icon color */
+#wifi-icon {
+  color: gray;
+}
+
+/* Style for weak password */
+.weak {
+  color: red;
+}
+
+/* Style for medium password */
+.medium {
+  color: orange;
+}
+
+/* Style for strong password */
+.strong {
+  color: green;
+}
+
+/* Additional styles for the text indicating strength */
+.strength-text {
+  font-size: 0.6rem;
+  margin-left: 5px;
+}
+
+.weak.strength-text {
+  color: red;
+}
+
+.medium.strength-text {
+  color: orange;
+}
+
+.strong.strength-text {
+  color: green;
+}
+.password-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-input {
+  width: 100%;
+  padding-right: 50px;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: #070707;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Responsive Media Queries */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .form-container {
+    padding: 30px;
+    height: 100vh;
+  }
+
+  .formt {
+    max-width: 700px;
+    height: 100vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-container {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .h2t {
+    font-size: 1.2rem;
+  }
+
+  .submit-btn {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .close-btn {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  input::placeholder {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,142 @@
+
+/* Main container */
+.listing-page-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    background-color: #fff;
+  }
+  
+  /* Header with border-bottom */
+  .header-container {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+  }
+  
+  .header-container h2 {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  /* Form layout */
+  .listing-form {
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-group label{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .radio-group {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  
+  .radio-group label {
+    font-size: 16px;
+  }
+  
+  /* Upload button */
+  .upload-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    width: 30%;
+    border: none;
+  }
+  .upload-btnlabel{
+    display: flex;
+    align-items: center;
+  }
+
+  
+  .upload-proof {
+    margin-top: 10px;
+  }
+  
+  .service-criteria p{
+    font-size: 18px;
+    color: #000;
+  }
+  
+  .criteria-icon {
+    /* margin-right: 10px; */
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .continue-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .continue-btn:hover {
+    background-color: #333;
+  }
+  
+  /* Media Queries for responsive layout */
+  @media (max-width: 1200px) {
+    .listing-page-container {
+      width: 70%;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .listing-page-container {
+      width: 80%;
+    }
+  
+    .header-container h2 {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .listing-page-container {
+      width: 90%;
+      margin: 20px;
+    }
+  
+    .continue-btn {
+      padding: 12px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .listing-page-container {
+      width: 80%;
+      margin:10px;
+    }
+  
+    .header-container h2 {
+      font-size: 16px;
+    }
+    .upload-btn {
+       padding: 10px 30p;
+    }
+    .continue-btn {
+      padding: 10px;
+      font-size: 13px;
+    }
+  }
+  
