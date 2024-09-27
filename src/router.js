@@ -41,7 +41,7 @@ import LayoutForNotification from "./layout/layoutfornotification";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element:<AvailableListing />,
   },
   {
     path: "/createaccount",
@@ -63,10 +63,10 @@ const router = createBrowserRouter([
       </Layout>
     ),
     children: [
-      {
-        index: true,
-        element: <Home />,
-      },
+      // {
+      //   index: true,
+      //   element: <Home />,
+      // },
       {
         path: "accountform",
         element: <Accountformtext />,

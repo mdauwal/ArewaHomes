@@ -2,6 +2,7 @@ import { createContext, useState } from "react";
 import partone from "../svgs/partOne.svg";
 import parttwo from "../svgs/partTwo.svg";
 import partthree from "../svgs/partThree.svg";
+import { FaEthereum } from "react-icons/fa"
 import partfour from "../svgs/partFour.svg";
 import partfive from "../svgs/partFive.svg";
 import partsix from "../svgs/partSix.svg";
@@ -14,7 +15,7 @@ export const AppStore = ({ children }) => {
   const [listings, setListings] = useState([
     {
       img: partone,
-      price: "₦700,000",
+      price:"700,000",
       address: "White Square Estate - Kaduna, Nigeria",
       watchNum: "20",
       amenities: "5 Bedrooms • 3 Bathrooms • 3,339sqft • Swimming Pool",

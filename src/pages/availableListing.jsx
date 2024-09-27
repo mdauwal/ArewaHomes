@@ -74,9 +74,11 @@ const navigate = useNavigate();
       <div className="">
         <div className="header">
           <div className="right-section">
+
             <div className="logo">
-              <h1 className="avail-header">Available listings.</h1>
+              <h1 className="avail-header text-[15px]">Available listings.</h1>
             </div>
+
             <div className="proper w-full sm:w-1/2 flex flex-col sm:flex-row justify-between px-4 py-2 relative">
               {/* Price Section */}
               <div className="proElement flex items-center space-x-2">
@@ -225,11 +227,17 @@ const navigate = useNavigate();
               <div className="location" style={{textAlign:"center" }}>
                 <span>Kaduna, Nigeria</span>
               </div>
-            </div>
-              <button className="map-btn" onClick={()=>{navigate("/searchbar/availablelistingmap",{state:""})}}>           
-                Open Map <img className="btn-logo" src={buttonlogo} alt="btnl"  />
+            </div >
+
+            <div className="flex  border-2 border-black w-[50px]">
+              <button className="map-btn text-[15px]" onClick={()=>{navigate("/searchbar/availablelistingmap",{state:""})}}>           
+                Open Map 
               </button>
+               <img className="btn-logo" src={buttonlogo} alt="btnl"  />
+            </div>
+
           </div>
+
           <div className="filters" style={{justifyContent:"space-around"}}>
             <div className="filterGuage">
               <span>$</span>
@@ -252,6 +260,7 @@ const navigate = useNavigate();
               <button style={{height:"38px"}}>Search</button>
             </div>
           </div>
+
         </div>
 
         <div className="listings-grid">
