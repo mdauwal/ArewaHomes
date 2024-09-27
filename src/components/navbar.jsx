@@ -1,6 +1,5 @@
 import React from "react";
-import icon from "../svgs/icon.svg";
-import logoName from "../svgs/logo.svg";
+import arewalogo1 from "../svgs/arewalogo1.png";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { RiMessage2Line } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
@@ -17,8 +16,8 @@ const Navbar = () => {
       <div className="w-full max-w-[1797px] flex flex-col md:flex-row justify-between items-center px-4 md:px-[62px] pt-1 md:pt-4">
         {/* Logo Section */}
         <div className="flex gap-2 items-center mb-4 md:mb-0">
-          <img src={icon} alt="icon" className="w-[40px] h-[40px] pb-1" />
-          <img src={logoName} alt="logo name" className="h-[15px]" />
+          <img src={arewalogo1} alt="icon" className="w-[50px] h-[40px] pb-2" />
+          <p className="">ArewaHomes</p>
         </div>
 
         {/* Navigation Links */}

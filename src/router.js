@@ -1,3 +1,4 @@
+import Web3 from 'web3';
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import Home from "./pages/home";
 import Layout from "./layout/layout";
@@ -37,6 +38,17 @@ import Term from "./pages/TermsAndCondition/Term";
 import Notificationtext from "./pages/Notificationtext";
 import PaymentBreak from "./pages/PaymentBreak";
 import LayoutForNotification from "./layout/layoutfornotification";
+
+
+// Check if MetaMask is available
+if (window.ethereum) {
+  window.web3 = new Web3(window.ethereum);
+  window.ethereum.enable().then(() => {
+      console.log("MetaMask connected");
+  });
+} else {
+  console.log('Please install MetaMask!');
+}
 
 const router = createBrowserRouter([
   {
