@@ -11,8 +11,6 @@ import { useNavigate } from "react-router-dom";
 import Listingcard from "../components/listingcard";
 import { AppContext } from "../store/store";
 
-  
-
 const Shortstay = () => {
   const [searchValue, setSearchValue] = useState('');
   const [filteredListings, setFilteredListings] = useState([]);
@@ -42,7 +40,6 @@ const Shortstay = () => {
   const toggleInfo = () => {
     setIsInfoVisible(!isInfoVisible);
   };
-
 
   const handleSearch = (e)=>{
     const value = e.target.value.trim();
