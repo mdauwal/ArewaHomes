@@ -2,10 +2,11 @@ import React from 'react'
 import "../pages/availableListing.css";
 import watcheye from "../svgs/watcheye.svg";
 import buttonlogo from "../svgs/buttonLogo.svg";
-const Listingcard = ({ img, price, watchNum, address, amenities, location, available = true, onClick }) => {
+const Listingcard = ({ img, price, watchNum, address, amenities, location, available = true, onClick, name }) => {
   return (
     <div className="listing cursor-pointer" onClick={onClick}>
       <img className="listImg" src={img} alt="Listing" />
+      <p>Listing name goes here - {name}</p>
       <div className="pricee">
         <div className="price-details">STARTING FROM</div>
         <div className="price-price">{price}</div>

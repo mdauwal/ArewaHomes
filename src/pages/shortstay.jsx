@@ -12,8 +12,15 @@ import Listingcard from "../components/listingcard";
 import { AppContext } from "../store/store";
 
 // firebase service
-
-import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore'
+import {
+  collection,
+  getDocs,
+  query,
+  where,
+  orderBy,
+  limit,
+  startAfter,
+} from 'firebase/firestore'
 import { db } from '../firebase.config'
 
 const Shortstay = () => {
@@ -23,35 +30,73 @@ const Shortstay = () => {
   const [apartmentType, setApartmentType] = useState('');
   const [houseType, setHouseType] = useState('');
   const [workSpaceType, setWorkSpaceType] = useState('');
-  // const {listings} = useContext(AppContext);
+  // const {listings, fetchListings} = useContext(AppContext);
 
-  useEffect(()=>{
+  // useEffect(()=>{
+  //   // setFilteredListings(listings)
+  //   const fetchListings = async () => {
+  //     const listingsRef = collection(db, 'listings')
+  //     const q = query(listingsRef, orderBy('timestamp', 'asc'), limit(5))
+  //     const querySnap = await getDocs(q)
+
+  //     let listings = []
+
+  //     querySnap.forEach((doc) => {
+  //       return listings.push({
+  //         id: doc.id,
+  //         data: doc.data(),
+  //       })
+  //     })
+  //   }
+
+  //   fetchListings()
+  //   console.log(listings)
+  // },[])
+
+  useEffect(() => {
     const fetchListings = async () => {
-      const listingsRef = collection(db, 'listings')
-      const q = query(listingsRef, orderBy('timestamp', 'asc'), limit(5))
-      const querySnap = await getDocs(q)
+      try {
+        // Get reference
+        const listingsRef = collection(db, 'listings')
 
-      let listings = []
+        // Create a query
+        const q = query(
+          listingsRef,
+          // where('offers', '==', true),
+          orderBy('timestamp', 'asc'),
+          limit(10)
+        )
 
-      querySnap.forEach((doc) => {
-        return listings.push({
-          id: doc.id,
-          data: doc.data(),
+        // Execute query
+        const querySnap = await getDocs(q)
+
+        // const lastVisible = querySnap.docs[querySnap.docs.length - 1]
+        // setLastFetchedListing(lastVisible)
+
+        const listings = []
+
+        querySnap.forEach((doc) => {
+          return listings.push({
+            id: doc.id,
+            data: doc.data(),
+          })
         })
-      })
 
-      setFilteredListings(listings)
-      // setListings(listings)
-      // setLoading(false)
-      // console.log(listings)
+        setFilteredListings(listings)
+        // setLoading(false)
+        console.log(filteredListings)
+      } catch (error) {
+        console.log(error)
+        // toast.error('Could not fetch listings')
+      }
     }
-    
+
     fetchListings()
-  },[])
- 
+  }, [])
+
   const navigate = useNavigate();
 
-  const handleApartmentType = (e)=>{
+  const handleApartmentType = (e) => {
     setApartmentType(e.target.value);
   }
 
@@ -66,28 +111,28 @@ const Shortstay = () => {
     setIsInfoVisible(!isInfoVisible);
   };
 
-  const handleSearch = (e)=>{
+  const handleSearch = (e) => {
     const value = e.target.value.trim();
     setSearchValue(value);
 
-    if(value){
+    // if (value) {
 
-      const filtered = listings.filter(item=> item.location.toLowerCase().includes(value.toLowerCase())
-        
-      //   {
+    //   const filtered = listings.filter(item => item.location.toLowerCase().includes(value.toLowerCase())
 
-      //   const isPriceMatch = !isNaN(value) && price.toString().includes(value);
-      //   const isLocationMatch = location.toLowerCase().includes(value);
+    //     //   {
 
-      // // Return true if either price or location matches
-      // return isPriceMatch || isLocationMatch;
-      // }
-        
-      )
-      setFilteredListings(filtered)
-    }else{
-      setFilteredListings(listings)
-    }
+    //     //   const isPriceMatch = !isNaN(value) && price.toString().includes(value);
+    //     //   const isLocationMatch = location.toLowerCase().includes(value);
+
+    //     // // Return true if either price or location matches
+    //     // return isPriceMatch || isLocationMatch;
+    //     // }
+
+    //   )
+    //   setFilteredListings(filtered)
+    // } else {
+    //   setFilteredListings(listings)
+    // }
 
   }
 
@@ -118,133 +163,133 @@ const Shortstay = () => {
 
                 {/* Toggleable Info Section */}
                 {isInfoVisible && (
-                   <div className="info absolute top-full mt-2 left-0 p-4 rounded-lg shadow-lg bg-white w-full md:w-[400px] z-10 text-left">
-                   <div className="mb-4 font-bold">What type of property are you interested in?</div>
-                 
-                   {/* Apartment Type */}
-                   <div className="flex flex-col justify-start mb-4">
-                     <div className="font-bold">Apartment Type:</div>
-                     <label>
-                       <input 
-                         type="radio" 
-                         value="serviced" 
-                         checked={apartmentType === 'serviced'}
-                         onChange={handleApartmentType}
-                       />
-                       Serviced
-                     </label>
-                     <label>
-                       <input 
-                         type="radio" 
-                         value="unserviced" 
-                         checked={apartmentType === 'unserviced'}
-                         onChange={handleApartmentType}
-                       />
-                       Unserviced
-                     </label>
-                   </div>
-                 
-                   {/* House Type */}
-                   <div className="flex flex-col justify-start mb-4">
-                     <div className="font-bold">House Type:</div>
-                     <label>
-                       <input 
-                         type="radio" 
-                         value="Duplex" 
-                         checked={houseType === 'Duplex'}
-                         onChange={handleHouseType}
-                       />
-                       Duplex
-                     </label>
-                     <label>
-                       <input 
-                         type="radio" 
-                         value="Bungalow" 
-                         checked={houseType === 'Bungalow'}
-                         onChange={handleHouseType}
-                       />
-                       Bungalow
-                     </label>
-                     <label>
-                       <input 
-                         type="radio" 
-                         value="Townhouse" 
-                         checked={houseType === 'Townhouse'}
-                         onChange={handleHouseType}
-                       />
-                       Townhouse
-                     </label>
-                     <label>
-                       <input 
-                         type="radio" 
-                         value="Container" 
-                         checked={houseType === 'Container'}
-                         onChange={handleHouseType}
-                       />
-                       Container
-                     </label>
-                     <label>
-                       <input 
-                         type="radio" 
-                         value="Mansion" 
-                         checked={houseType === 'Mansion'}
-                         onChange={handleHouseType}
-                       />
-                       Mansion
-                     </label>
-                   </div>
-                 
-                   {/* WorkSpace Type */}
-                   <div className="flex flex-col justify-start mb-4">
-                     <div className="font-bold">WorkSpace Type:</div>
-                     <label>
-                       <input 
-                         type="radio" 
-                         value="Co-working" 
-                         checked={workSpaceType === 'Co-working'}
-                         onChange={handleWorkSpaceType}
-                       />
-                       Co-working
-                     </label>
-                     <label>
-                       <input 
-                         type="radio" 
-                         value="Private office" 
-                         checked={workSpaceType === 'Private office'}
-                         onChange={handleWorkSpaceType}
-                       />
-                       Private office
-                     </label>
-                   </div>
-                 
-                   {/* Clear and Save Buttons */}
-                   <div className="flex justify-between items-center">
-                     <button 
-                       onClick={() => {
-                         setApartmentType('');
-                         setHouseType('');
-                         setWorkSpaceType('');
-                       }}
-                     >
-                       Clear
-                     </button>
-                     <button className="bg-[#219653] text-white px-4 py-1 rounded">
-                       Save
-                     </button>
-                   </div>
-                 </div>
-                 
+                  <div className="info absolute top-full mt-2 left-0 p-4 rounded-lg shadow-lg bg-white w-full md:w-[400px] z-10 text-left">
+                    <div className="mb-4 font-bold">What type of property are you interested in?</div>
+
+                    {/* Apartment Type */}
+                    <div className="flex flex-col justify-start mb-4">
+                      <div className="font-bold">Apartment Type:</div>
+                      <label>
+                        <input
+                          type="radio"
+                          value="serviced"
+                          checked={apartmentType === 'serviced'}
+                          onChange={handleApartmentType}
+                        />
+                        Serviced
+                      </label>
+                      <label>
+                        <input
+                          type="radio"
+                          value="unserviced"
+                          checked={apartmentType === 'unserviced'}
+                          onChange={handleApartmentType}
+                        />
+                        Unserviced
+                      </label>
+                    </div>
+
+                    {/* House Type */}
+                    <div className="flex flex-col justify-start mb-4">
+                      <div className="font-bold">House Type:</div>
+                      <label>
+                        <input
+                          type="radio"
+                          value="Duplex"
+                          checked={houseType === 'Duplex'}
+                          onChange={handleHouseType}
+                        />
+                        Duplex
+                      </label>
+                      <label>
+                        <input
+                          type="radio"
+                          value="Bungalow"
+                          checked={houseType === 'Bungalow'}
+                          onChange={handleHouseType}
+                        />
+                        Bungalow
+                      </label>
+                      <label>
+                        <input
+                          type="radio"
+                          value="Townhouse"
+                          checked={houseType === 'Townhouse'}
+                          onChange={handleHouseType}
+                        />
+                        Townhouse
+                      </label>
+                      <label>
+                        <input
+                          type="radio"
+                          value="Container"
+                          checked={houseType === 'Container'}
+                          onChange={handleHouseType}
+                        />
+                        Container
+                      </label>
+                      <label>
+                        <input
+                          type="radio"
+                          value="Mansion"
+                          checked={houseType === 'Mansion'}
+                          onChange={handleHouseType}
+                        />
+                        Mansion
+                      </label>
+                    </div>
+
+                    {/* WorkSpace Type */}
+                    <div className="flex flex-col justify-start mb-4">
+                      <div className="font-bold">WorkSpace Type:</div>
+                      <label>
+                        <input
+                          type="radio"
+                          value="Co-working"
+                          checked={workSpaceType === 'Co-working'}
+                          onChange={handleWorkSpaceType}
+                        />
+                        Co-working
+                      </label>
+                      <label>
+                        <input
+                          type="radio"
+                          value="Private office"
+                          checked={workSpaceType === 'Private office'}
+                          onChange={handleWorkSpaceType}
+                        />
+                        Private office
+                      </label>
+                    </div>
+
+                    {/* Clear and Save Buttons */}
+                    <div className="flex justify-between items-center">
+                      <button
+                        onClick={() => {
+                          setApartmentType('');
+                          setHouseType('');
+                          setWorkSpaceType('');
+                        }}
+                      >
+                        Clear
+                      </button>
+                      <button className="bg-[#219653] text-white px-4 py-1 rounded">
+                        Save
+                      </button>
+                    </div>
+                  </div>
+
                 )}
               </div>
             </div>
-            <div className="weather" style={{width:"20%", }}>
-              <div className="weaImages" style={{display:"flex", flexDirection:"row", justifyContent:"space-between"}}>
+            <div className="weather" style={{ width: "20%", }}>
+              <div className="weaImages" style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                 <img className="templogo" src={sun} alt="sunicon" />
                 <img className="templogo" src={temp} alt="sunicon" />
                 <img className="templogo" src={sky} alt="sunicon" />
                 <span className="temp-text">30°</span>
               </div>
-              <div className="location" style={{textAlign:"center" }}>
+              <div className="location" style={{ textAlign: "center" }}>
                 <span>Kaduna, Nigeria</span>
               </div>
             </div>
@@ -252,7 +297,7 @@ const Shortstay = () => {
               Open Map <img className="btn-logo" src={buttonlogo} alt="btnl" />
             </button>
           </div>
-          <div className="filters" style={{justifyContent:"space-around"}}>
+          <div className="filters" style={{ justifyContent: "space-around" }}>
             <div className="filterGuage">
               <span>$</span>
               <img id="guage" src={guage} alt="guage" />
@@ -275,24 +320,26 @@ const Shortstay = () => {
               <input id="fil-timeRight" type="text" placeholder="Check in" />
               <input id="fil-timeLeft" type="text" placeholder="Check out" />
               <input className="guest-text" type="number" placeholder="Guests" />
-              <button style={{height:"38px"}}>Search</button>
+              <button style={{ height: "38px" }}>Search</button>
             </div>
           </div>
         </div>
 
         <div className="listings-grid">
           {filteredListings?.map((listing, index) => (
+            
             <Listingcard
-              key={index}
-              img={listing.img}
-              price={listing.price}
-              address={listing.address}
-              watchNum={listing.watchNum}
-              amenities={listing.amenities}
-              location={listing.location}
+              key={listing.id}
+              img={listing.data.imageUrls[0]}
+              price={listing.data.regularPrice}
+              address={listing.data.location}
+              watchNum='100' //fixme - set dynamic value
+              amenities={`${listing.data.bathrooms} bathrooms • ${listing.data.bedrooms} bedrooms`} //fixme - split individually
+              location={'listing.location'}
               onClick={() => navigate("/propertydetails")}
-              available={listing.available}
+              available={listing.data.type}
             />
+            
           ))}
         </div>
 

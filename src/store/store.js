@@ -8,6 +8,18 @@ import partsix from "../svgs/partSix.svg";
 import partseven from "../svgs/partSeve.svg";
 import parteight from "../svgs/partEigh.svg";
 
+// firebase service
+import {
+  collection,
+  getDocs,
+  query,
+  where,
+  orderBy,
+  limit,
+  startAfter,
+} from 'firebase/firestore'
+import { db } from '../firebase.config'
+
 export const AppContext = createContext();
 
 export const AppStore = ({ children }) => {
@@ -89,21 +101,41 @@ export const AppStore = ({ children }) => {
   //     name: "test",
   //   };
   const fetchListings = async () => {
-    const listingsRef = collection(db, 'listings')
-    const q = query(listingsRef, orderBy('timestamp', 'asc'), limit(5))
-    const querySnap = await getDocs(q)
+    try {
+      // Get reference
+      const listingsRef = collection(db, 'listings')
 
-    let listings = []
+      // Create a query
+      const q = query(
+        listingsRef,
+        // where('offers', '==', true),
+        orderBy('timestamp', 'asc'),
+        limit(10)
+      )
 
-    querySnap.forEach((doc) => {
-      return listings.push({
-        id: doc.id,
-        data: doc.data(),
+      // Execute query
+      const querySnap = await getDocs(q)
+
+      // const lastVisible = querySnap.docs[querySnap.docs.length - 1]
+      // setLastFetchedListing(lastVisible)
+
+      const listings = []
+
+      querySnap.forEach((doc) => {
+        return listings.push({
+          id: doc.id,
+          data: doc.data(),
+        })
       })
-    })
-  }
 
-  // fetchListings()    //note - to be called in other pages
+      // setFilteredListings(listings)
+      // setLoading(false)
+      // console.log(filteredListings)
+    } catch (error) {
+      console.log(error)
+      // toast.error('Could not fetch listings')
+    }
+  }
   return (
     <AppContext.Provider value={{ listings, fetchListings }}>{children}</AppContext.Provider>
   );
