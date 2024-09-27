@@ -4,6 +4,8 @@ import { AiOutlineExclamationCircle } from "react-icons/ai"
 import React, { useState } from 'react';
 import './ListingDetails.css';
 
+
+
 const ListingDetails = () => {
   const [owner, setOwner] = useState('');
   const [agent, setAgent] = useState('');
