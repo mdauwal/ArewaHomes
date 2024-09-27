@@ -11,6 +11,11 @@ import { useNavigate } from "react-router-dom";
 import Listingcard from "../components/listingcard";
 import { AppContext } from "../store/store";
 
+// firebase service
+
+import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore'
+import { db } from '../firebase.config'
+
 const Shortstay = () => {
   const [searchValue, setSearchValue] = useState('');
   const [filteredListings, setFilteredListings] = useState([]);
@@ -18,11 +23,31 @@ const Shortstay = () => {
   const [apartmentType, setApartmentType] = useState('');
   const [houseType, setHouseType] = useState('');
   const [workSpaceType, setWorkSpaceType] = useState('');
-  const {listings} = useContext(AppContext);
+  // const {listings} = useContext(AppContext);
 
   useEffect(()=>{
-    setFilteredListings(listings)
-  },[listings])
+    const fetchListings = async () => {
+      const listingsRef = collection(db, 'listings')
+      const q = query(listingsRef, orderBy('timestamp', 'asc'), limit(5))
+      const querySnap = await getDocs(q)
+
+      let listings = []
+
+      querySnap.forEach((doc) => {
+        return listings.push({
+          id: doc.id,
+          data: doc.data(),
+        })
+      })
+
+      setFilteredListings(listings)
+      // setListings(listings)
+      // setLoading(false)
+      // console.log(listings)
+    }
+    
+    fetchListings()
+  },[])
  
   const navigate = useNavigate();
 
