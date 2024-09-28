@@ -75,7 +75,7 @@ const Propertydetails = () => {
                 </div>
                 
                 {/* Note that i done need to call the setAddress here, its just a placeholder for now */}
-                <button className='bg-[#00A167] text-white p-3 w-[250px]' onClick={()=>{navigate("/form/paymentbreak")}}>Book Property</button> 
+                <button className='bg-[#00A167] text-white p-3 w-[250px]' onClick={()=>{navigate("/form/paymentbreak")}}>Bid for property</button> 
             </div>
           </div>
         

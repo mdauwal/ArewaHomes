@@ -14,7 +14,17 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+ahmadogo
+// Initialize Firestore
+export const db = getFirestore(app);
+
+// Initialize Firebase Authentication
+export const auth = getAuth(app);  // Export Firebase Auth
+
+export default  app;
+
 export const db = getFirestore();
 export const storage = getStorage();    // reference to the storage service
 export const storageRef = ref(storage); // reference to the bucket in the storage
 // export const storage = app.storage();
+

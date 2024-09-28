@@ -53,7 +53,7 @@ if (window.ethereum) {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element:<AvailableListing />,
   },
   {
     path: "/createaccount",
@@ -75,14 +75,18 @@ const router = createBrowserRouter([
       </Layout>
     ),
     children: [
-      {
-        index: true,
-        element: <Home />,
-      },
+      // {
+      //   index: true,
+      //   element: <H />,
+      // },
       {
         path: "accountform",
         element: <Accountformtext />,
         // not used yet
+      },
+      {
+        path: "log-in",
+        element: <Login />
       },
       {
         path: "imagegrid",
