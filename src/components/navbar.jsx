@@ -13,7 +13,7 @@ import { MdOutlineExplore } from "react-icons/md";
 import { GoTag } from "react-icons/go";
 import { MdOutlinePersonOutline } from "react-icons/md";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { auth } from "../firebase.config";
+import { auth } from "../firebaseConfig";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {

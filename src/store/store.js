@@ -19,7 +19,7 @@ import {
   limit,
   startAfter,
 } from 'firebase/firestore'
-import { db } from '../firebase.config'
+import { db } from '../firebaseConfig'
 
 export const AppContext = createContext();
 

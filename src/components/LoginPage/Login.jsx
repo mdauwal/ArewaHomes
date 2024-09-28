@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import firebase from '../firebaseConfig';  // Ensure this path is correct
 import { MdVisibilityOff, MdVisibility } from "react-icons/md";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth, db } from "../firebaseConfig";
+import { app, auth, db } from '../../firebaseConfig'; // Adjust path as needed
+
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
 // import { auth } from "firebase"

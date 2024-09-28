@@ -21,7 +21,7 @@ import {
   limit,
   startAfter,
 } from 'firebase/firestore'
-import { db } from '../firebase.config'
+import { db } from '../firebaseConfig'
 
 const Shortstay = () => {
   const [searchValue, setSearchValue] = useState('');
