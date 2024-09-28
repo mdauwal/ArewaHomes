@@ -31,7 +31,7 @@ const Mapcomponent = ({
     { address: 'No.6, Lekki Phase 1, Lagos', lat: '6.4315', lng: '3.4408' },
     { address: 'No.6, Lekki Phase 1, Lagos', lat: '6.9999', lng: '3.7879' },
   ],
-  mapHeight = '700px',
+  mapHeight = '70vh',
   mapWidth = '100%',
 }) => {
   const [coordinates, setCoordinates] = useState([]);
