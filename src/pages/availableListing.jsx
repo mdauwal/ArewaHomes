@@ -229,12 +229,12 @@ const navigate = useNavigate();
               </div>
             </div >
 
-            <div className="flex  border-2 border-black w-[50px]">
+            {/* <div className="flex  border-2 border-black "> */}
               <button className="map-btn text-[15px]" onClick={()=>{navigate("/searchbar/availablelistingmap",{state:""})}}>           
                 Open Map 
               </button>
                <img className="btn-logo" src={buttonlogo} alt="btnl"  />
-            </div>
+            {/* </div> */}
 
           </div>
 

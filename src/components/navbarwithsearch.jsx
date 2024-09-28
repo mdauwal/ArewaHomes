@@ -6,6 +6,7 @@ import { RiMessage2Line } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
 import Searchinput from "./searchinput";
 import { Link } from "react-router-dom";
+import arewalogo1 from "../svgs/arewalogo1.png";
 
 
 const NavbarWithSearch = () => {
@@ -14,8 +15,8 @@ const NavbarWithSearch = () => {
       <div className="w-full max-w-[1797px] flex flex-col md:flex-row justify-between items-center px-4 md:px-[62px]">
         {/* Logo Section */}
         <div className="flex gap-2 items-center mb-4 md:mb-0">
-          <img src={icon} alt="icon" className="w-[40px] h-[40px] pb-1" />
-          <img src={logoName} alt="logo name" className="h-[15px]" />
+          <img src={arewalogo1} alt="icon" className="w-[50px] h-[40px] pb-1" />
+          <p>ArewaHomes</p>
         </div>
 
         {/* Search Bar */}

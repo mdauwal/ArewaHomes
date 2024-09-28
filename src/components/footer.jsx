@@ -1,6 +1,5 @@
 import React from 'react';
-import icon from "../svgs/icon.svg";
-import logoName from "../svgs/logo.svg";
+import arewalogo1 from "../svgs/arewalogo1.png";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
@@ -15,10 +14,10 @@ const Footer = () => {
         {/* Logo Section */}
         <div className="flex flex-col items-start gap-2">
           <div className="flex gap-2 items-center">
-            <img src={icon} alt="icon" className="w-[40px] h-[40px]" />
-            <img src={logoName} alt="logo name" className="h-[15px]" />
+            <img src={arewalogo1} alt="icon" className="w-[50px] h-[40px]" />
+            <p>ArewaHomes</p>
           </div>
-          <p className="text-sm">© 2021 10ancy. All rights reserved.</p>
+          <p className="text-sm">© 2021 ArewaHomes. All rights reserved.</p>
         </div>
 
         {/* Icon Section */}

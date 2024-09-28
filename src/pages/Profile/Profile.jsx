@@ -1,7 +1,7 @@
 // Profile.js
 import React from 'react';
 import './Profile.css';
-import mainprofile from "../../svgs/mainprofile.svg"
+import mdprofile from '../../svgs/mdprofile.jpg';
 import profileone from "../../svgs/profilelistone.svg"
 import profiletwo from "../../svgs/profilelisttwo.svg"
 import profilethree from "../../svgs/profilelistthree.svg"
@@ -14,7 +14,7 @@ const Profile = () => {
     name: "Muhammad Auwal",
     rating: 5.0,
     reviews: 500,
-    profileImage: mainprofile,
+    profileImage: mdprofile,
     listings: [
       {
         id: 1,

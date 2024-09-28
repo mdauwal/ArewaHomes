@@ -173,7 +173,7 @@ const AccountForm = () => {
         <p className="password-hint ">
           You need to be 18+ to use our platform .This information is for
           internal use only and won't <br></br>be shared with other users of
-          RealHubAfrica
+          ArewaHomes
         </p>
 
         {errors.dob && <p className="error-text">{errors.dob}</p>}
