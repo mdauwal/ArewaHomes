@@ -2,11 +2,24 @@ import { createContext, useState } from "react";
 import partone from "../svgs/partOne.svg";
 import parttwo from "../svgs/partTwo.svg";
 import partthree from "../svgs/partThree.svg";
+import { FaEthereum } from "react-icons/fa"
 import partfour from "../svgs/partFour.svg";
 import partfive from "../svgs/partFive.svg";
 import partsix from "../svgs/partSix.svg";
 import partseven from "../svgs/partSeve.svg";
 import parteight from "../svgs/partEigh.svg";
+
+// firebase service
+import {
+  collection,
+  getDocs,
+  query,
+  where,
+  orderBy,
+  limit,
+  startAfter,
+} from 'firebase/firestore'
+import { db } from '../firebase.config'
 
 export const AppContext = createContext();
 
@@ -14,7 +27,7 @@ export const AppStore = ({ children }) => {
   const [listings, setListings] = useState([
     {
       img: partone,
-      price: "₦700,000",
+      price:"700,000",
       address: "White Square Estate - Kaduna, Nigeria",
       watchNum: "20",
       amenities: "5 Bedrooms • 3 Bathrooms • 3,339sqft • Swimming Pool",
@@ -88,7 +101,43 @@ export const AppStore = ({ children }) => {
   //   const data = {
   //     name: "test",
   //   };
+  const fetchListings = async () => {
+    try {
+      // Get reference
+      const listingsRef = collection(db, 'listings')
+
+      // Create a query
+      const q = query(
+        listingsRef,
+        // where('offers', '==', true),
+        orderBy('timestamp', 'asc'),
+        limit(10)
+      )
+
+      // Execute query
+      const querySnap = await getDocs(q)
+
+      // const lastVisible = querySnap.docs[querySnap.docs.length - 1]
+      // setLastFetchedListing(lastVisible)
+
+      const listings = []
+
+      querySnap.forEach((doc) => {
+        return listings.push({
+          id: doc.id,
+          data: doc.data(),
+        })
+      })
+
+      // setFilteredListings(listings)
+      // setLoading(false)
+      // console.log(filteredListings)
+    } catch (error) {
+      console.log(error)
+      // toast.error('Could not fetch listings')
+    }
+  }
   return (
-    <AppContext.Provider value={{ listings }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ listings, fetchListings }}>{children}</AppContext.Provider>
   );
 };
